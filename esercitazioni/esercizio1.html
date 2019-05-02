@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Javascript example</title>
+	</head>
+	<body onLoad="alert('hello');">
+		<h1 onMouseOver="console.log('Mouse Over!');">
+			Javascript: learning to use it
+		</h1>
+		<p id="p1">
+			I clicked on the button <span id="s1">4</span> times.
+			<button onclick="
+				var n = parseInt(document.getElementById('s1').innerHTML); 
+				document.getElementById('s1').innerHTML = n+6;
+			">Add</button>
+			<button onclick="
+				document.getElementById('s1').innerHTML = 5;
+			">Reset</button>
+		</p>
+	</body>
+</html>
