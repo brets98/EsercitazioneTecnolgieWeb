@@ -9,6 +9,7 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<title>Luca Bretta</title>
 		<script type="text/javascript"> 
+		//uso register1 e register2 come se fossero delle varibili che vado a cambiare man mano che digito 
 			function doNum(button) {
 				var n = parseInt(button.innerHTML)
 				var v2 = parseInt(document.getElementById('register2').value)
@@ -21,7 +22,7 @@
 				document.getElementById('register2').value = 0; 
 			}
 
-			function doSpecial(button) {
+			function doSpecial(button) {  // viene richiamato da c o da il combio di segno
 				var command = button.innerHTML
 				var v1 = parseInt(document.getElementById('register1').innerHTML)
 				var v2 = parseInt(document.getElementById('register2').value)
@@ -32,7 +33,7 @@
 					op = '' ;
 					v2 = 0; 
 					break; 
-				case '\u00B1': // plus or minus
+				case '\u00B1': // cambio di segno --> moltiplico per -1
 					v2 = -1 * v2 ;
 					break; 
 				}
@@ -80,7 +81,7 @@
 	</head>
 	<body>
 		<h1>
-			Javascript: the calculator 6.0 - ByLuca Bretta
+			Javascript: the calculator - By Luca Bretta
 		</h1>
 		<div class="card w-25 p-5 m-5">
 			<div class="row">
@@ -94,7 +95,7 @@
 			</div>
 			<div class="row">
 				<div class="btn-group mb-1 w-100 p-1" role="group">
-					<button type="button" class="btn btn-danger mr-1 w-50" onclick="doSpecial(this)">C</button>
+					<button type="button" class="btn btn-danger mr-1 w-50" onclick="doSpecial(this)">C</button><!--richiama do special e con this gli passa c come stringa e lo usa come identificatore per il riconoscimento dell'operazione -->>
 					<button type="button" class="btn btn-light mr-1 w-25" onclick="doOp(this)">x<sup>y</sup></button>
 					<button type="button" class="btn btn-dark mr-1 w-25"  onclick="doOp(this)">/</button>
 				</div>
